@@ -1,0 +1,91 @@
+[
+  {
+    "name": "udi_search",
+    "description": "Search China's medical-device Unique Device Identification register by product name, trade name, or model, refreshed from the publisher's release files. Optionally filter by registrant (manufacturer) name.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Product name, trade name, or model keywords (space-separated terms, all must match)"
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "Optional registrant/manufacturer name filter (Chinese or English)"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "Max rows to return (default 20, max 100)"
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "udi_resolve",
+    "description": "Resolve one China medical-device Unique Device Identifier (UDI-DI) to its registered product record — name, model, classification, registrant, and registration number.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "udi_di": {
+          "type": "string",
+          "description": "The product-level UDI-DI to resolve"
+        }
+      },
+      "required": [
+        "udi_di"
+      ]
+    }
+  },
+  {
+    "name": "udi_manufacturer",
+    "description": "Look up a medical-device registrant (manufacturer) in China's UDI register by name or unified social credit code, and see how many device identifiers and registration numbers it holds.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Registrant name (Chinese or English), partial match"
+        },
+        "registrant_id": {
+          "type": "string",
+          "description": "Registrant's unified social credit code (统一社会信用代码), exact match"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "Max registrants to return (default 10, max 50)"
+        }
+      }
+    }
+  },
+  {
+    "name": "udi_recent_changes",
+    "description": "Devices in China's medical-device UDI register whose latest published version is on or after a given date, newest first — drawn from the publisher's delta (daily/weekly/monthly) release files.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "since": {
+          "type": "string",
+          "description": "ISO date (YYYY-MM-DD) — list devices versioned on or after this date"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "Max rows to return (default 50, max 100)"
+        }
+      },
+      "required": [
+        "since"
+      ]
+    }
+  },
+  {
+    "name": "udi_coverage",
+    "description": "Coverage of China's medical-device UDI register: device count, the full release and latest delta applied, and the data_as_of date. Registrant identity is withheld for individual (natural-person) registrants.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  }
+]

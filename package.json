@@ -1,0 +1,33 @@
+{
+  "name": "@pipeworx/mcp-china-medical-devices",
+  "version": "0.1.0",
+  "description": "China medical-device Unique Device Identification (UDI) register, served (fleet #3410).",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "mcp-china-medical-devices": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "china-medical-devices"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipeworx-io/mcp-china-medical-devices.git"
+  },
+  "mcpName": "io.github.pipeworx-io/china-medical-devices",
+  "pipeworx": {
+    "mode": "gateway",
+    "slug": "china-medical-devices",
+    "gatewaySlug": "china-medical-devices",
+    "sourceHash": "v1-af834fd1afdb3186e78497fcb4cd8ebb80dfb62b2569983558987565fffd079b",
+    "sourceCommit": "aef970216f5309cdd22a27ddfc275e472aaadac1"
+  }
+}

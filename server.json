@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pipeworx-io/china-medical-devices",
+  "title": "China Medical Devices",
+  "description": "China medical-device Unique Device Identification (UDI) register, served (fleet #3410).",
+  "version": "0.1.0",
+  "websiteUrl": "https://pipeworx.io/packs/china-medical-devices",
+  "repository": {
+    "url": "https://github.com/pipeworx-io/mcp-china-medical-devices",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://gateway.pipeworx.io/china-medical-devices/mcp"
+    }
+  ]
+}
